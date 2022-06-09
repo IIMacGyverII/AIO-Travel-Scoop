@@ -5,9 +5,10 @@ import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // sidebar
-import AppLayout from "../components/layout/AppLayout";
+import AppLayoutSignUp from "../components/layout/AppLayoutSignUp";
 import "../App.scss";
 import "boxicons/css/boxicons.min.css";
+
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -36,7 +37,7 @@ function Login(props) {
 
   return (
     <div className="container my-1">
-      <AppLayout />
+      <AppLayoutSignUp />
         <div>
           <Link to="/signup">← Go to Signup</Link>
 

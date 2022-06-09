@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+// sidebar
+import AppLayoutSignUp from "../components/layout/AppLayoutSignUp";
+import "../App.scss";
+import "boxicons/css/boxicons.min.css";
+
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -32,6 +37,7 @@ function Signup(props) {
 
   return (
     <div className="container my-1">
+      <AppLayoutSignUp />
       <Link to="/login">← Go to Login</Link>
 
       <h2>Signup</h2>

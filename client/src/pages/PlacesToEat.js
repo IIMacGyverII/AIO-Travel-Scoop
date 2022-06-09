@@ -14,7 +14,7 @@ const Home = () => {
       <AppLayout />
       <div>
       </div>
-      <p>AIO test</p>
+      <p>Places to Eat test</p>
       {/* <CategoryMenu /> */}
       {/* <ProductList /> */}
       {/* <Cart /> */}

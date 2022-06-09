@@ -10,47 +10,18 @@ const sidebarNavItems = [
         section: ''
     },
     {
-        display: 'Flights',
-        icon: <i className='bx bx-rocket'></i>,
-        to: '/flights',
-        section: 'flights'
+        display: 'SignUp',
+        icon: <i className='bx bx-message-square-check'></i>,
+        to: '/signup',
+        section: 'signup'
     },
     {
-        display: 'Hotels',
-        icon: <i className='bx bx-hotel'></i>,
-        to: '/hotels',
-        section: 'hotels'
+        display: 'Login',
+        icon: <i className='bx bx-door-open'></i>,
+        to: '/login',
+        section: 'login'
     },
-    {
-        display: 'Rental Cars',
-        icon: <i className='bx bx-car'></i>,
-        to: '/rentalcars',
-        section: 'rentalcars'
-    },
-    {
-        display: 'Places to Eat',
-        icon: <i className='bx bx-fork'></i>,
-        to: '/placestoeat',
-        section: 'placestoeat'
-    },
-    {
-        display: 'Things to Do',
-        icon: <i className='bx bx-arch'></i>,
-        to: '/thingstodo',
-        section: 'thingstodo'
-    },
-    {
-        display: 'Weather',
-        icon: <i className='bx bx-sun'></i>,
-        to: 'weather',
-        section: 'weather'
-    },
-    {
-        display: 'Your Places',
-        icon: <i className='bx bx-map-pin'></i>,
-        to: 'yourplaces',
-        section: 'yourplaces'
-    },
+    
     
     
 ]

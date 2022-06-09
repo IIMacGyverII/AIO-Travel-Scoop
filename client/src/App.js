@@ -13,10 +13,17 @@ import "./App.scss";
 import "boxicons/css/boxicons.min.css";
 
 // material UI
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
-import ThreeDRotation from '@mui/icons-material/ThreeDRotation';
+import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
+import ThreeDRotation from "@mui/icons-material/ThreeDRotation";
 
 import Home from "./pages/Home";
+import Flights from "./pages/Flights";
+import Hotels from "./pages/Hotels";
+import RentalCars from "./pages/RentalCars";
+import PlacesToEat from "./pages/PlacesToEat";
+import ThingsToDo from "./pages/ThingsToDo";
+import Weather from "./pages/Weather";
+import YourPlaces from "./pages/YourPlaces";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
@@ -50,19 +57,27 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-            <Nav />
-          <StoreProvider>
-            <Routes>
-              <Route path="/" element={<AppLayout />} />
-              {/* <Route path="/" element={<Home />} /> */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/success" element={<Success />} />
-              <Route path="/orderHistory" element={<OrderHistory />} />
-              <Route path="/products/:id" element={<Detail />} />
-              <Route path="*" element={<NoMatch />} />
-            </Routes>
-          </StoreProvider>
+            <AppLayout />
+          <Nav />
+          {/* <StoreProvider> */}
+          <Routes>
+            {/* <Route path="/" element={<AppLayout />} /> */}
+            <Route path="/" element={<Home />} />
+            <Route path="/flights" element={<Flights />} />
+            <Route path="/hotels" element={<Hotels />} />
+            <Route path="/rentalcars" element={<RentalCars />} />
+            <Route path="/placestoeat" element={<PlacesToEat />} />
+            <Route path="/thingstodo" element={<ThingsToDo />} />
+            <Route path="/weather" element={<Weather />} />
+            <Route path="/yourplaces" element={<YourPlaces />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/orderHistory" element={<OrderHistory />} />
+            <Route path="/products/:id" element={<Detail />} />
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
+          {/* </StoreProvider> */}
         </div>
       </Router>
     </ApolloProvider>
