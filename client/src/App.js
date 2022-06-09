@@ -12,6 +12,10 @@ import AppLayout from "./components/layout/AppLayout";
 import "./App.scss";
 import "boxicons/css/boxicons.min.css";
 
+// material UI
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import ThreeDRotation from '@mui/icons-material/ThreeDRotation';
+
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
@@ -46,11 +50,11 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
+            <Nav />
           <StoreProvider>
-            {/* <Nav /> */}
             <Routes>
               <Route path="/" element={<AppLayout />} />
-              <Route path="/" element={<Home />} />
+              {/* <Route path="/" element={<Home />} /> */}
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/success" element={<Success />} />

@@ -13,19 +13,19 @@ const sidebarNavItems = [
         display: 'Hotels',
         icon: <i className='bx bx-hotel'></i>,
         to: '/login',
-        section: 'started'
+        section: 'login'
     },
     {
         display: 'Rental Cars',
         icon: <i className='bx bx-car'></i>,
         to: '/signup',
-        section: 'calendar'
+        section: 'signup'
     },
     {
         display: 'Places to Eat',
         icon: <i className='bx bx-fork'></i>,
         to: '/success',
-        section: 'user'
+        section: 'success'
     },
     {
         display: 'Things to Do',
@@ -37,13 +37,13 @@ const sidebarNavItems = [
         display: 'Weather',
         icon: <i className='bx bx-sun'></i>,
         to: 'products/:id',
-        section: 'order'
+        section: 'products/:id'
     },
     {
         display: 'Your Places',
         icon: <i className='bx bx-planet'></i>,
         to: 'products/:id',
-        section: 'order'
+        section: 'products/:id'
     },
 ]
 
