@@ -3,15 +3,16 @@ import { DataGrid } from "@mui/x-data-grid";
 import axios from "axios";
 
 const columns = [
-  { field: "itineraryType", headerName: "ID" },
-  { field: "airport2", headerName: "airport", width: 300 },
-  { field: "response.data.airline[0].name", headerName: "airline", width: 600 },
+  { field: 'name', headerName: 'Airline Name', width: 300 },
+  { field: 'airport', headerName: 'airline', width: 600 },
+  // { field: "response.data.airline[0].name", headerName: "airline", width: 600 },
 ];
 
 const DataTableAxios = () => {
   const [tableData, setTableData] = useState([]);
 
-  const [airlineData, setAirlineData] = useState(tableData);
+  const [airlineData, setAirlineData] = useState([]);
+  const [segmentData, setSegmentData] = useState(tableData);
   const [deletedRows, setDeletedRows] = useState([]);
   // const [airlineData, setAirlineData] = useState([])
 
@@ -52,7 +53,8 @@ const DataTableAxios = () => {
         //
         // console.log("tableDataAxios attempted array", [response.data]);
         setTableData(response.data);
-        setAirlineData([response.data.airline])
+        setAirlineData(response.data.airline)
+        setSegmentData(response.data.segment)
       })
       .catch(function (error) {
         console.error(error);
@@ -60,11 +62,26 @@ const DataTableAxios = () => {
   }, []);
   console.log("tableDataAxios", tableData);
   console.log("andrewaxios", airlineData)
+  
+  const rowData1 = airlineData?.map((airline) => {
+    console.log("console", airline)
+    return {
+      id: airline?.code,
+      name: airline?.name,
+      // email: airline?.email,
+      // phone: airline?.phone,
+      // id: airline?.id,
+      // website: airline?.website,
+      // phone: airline?.phone,
+      // company: airline?.company?.name,
+      // city: airline?.address?.city,
+    };
+  });
 
   return (
     <div style={{ height: 700, width: "100%" }}>
       <DataGrid
-        rows={tableData}
+        rows={rowData1}
         columns={columns}
         pageSize={99}
         pagination

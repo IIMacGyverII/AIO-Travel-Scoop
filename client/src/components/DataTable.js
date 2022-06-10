@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { DataGrid } from '@material-ui/data-grid'
 
 const columns = [
-  { field: 'id', headerName: 'ID' },
-  { field: 'airline', headerName: 'airport', width: 300 },
+  // { field: 'id', headerName: 'id' },
+  { field: 'name', headerName: 'Airline Name', width: 300 },
   { field: 'airport', headerName: 'airline', width: 600 },
-  {
-    field: 'airline',
-    headerName: 'Airline',
-    valueGetter: (params) => {
-      return params.getValue(params.id, "attributes").name;
-    }
-  },
+  // {
+  //   field: 'airline',
+  //   headerName: 'Airline',
+  //   valueGetter: (params) => {
+  //     return params.getValue(params.id, "attributes").name;
+  //   }
+  // },
 ]
 
 const DataTable = () => {
@@ -36,19 +36,32 @@ const DataTable = () => {
         console.log("bulkfetch", data)
         console.log("dataTablefetch", data.airline)
       setAirlineData(data.airline)
-      })
-      
-      
-      
+      })   
       
   }, [])
+
+  const rowData = airlineData?.map((airline) => {
+    // console.log(airline.name)
+    return {
+      id: airline?.code,
+      name: airline?.name,
+      // email: airline?.email,
+      // phone: airline?.phone,
+      // id: airline?.id,
+      // website: airline?.website,
+      // phone: airline?.phone,
+      // company: airline?.company?.name,
+      // city: airline?.address?.city,
+    };
+  });
+
 console.log("andrew", airlineData)
   console.log("dataTablefetch tabledata", tableData);
 // console.log(flight)
   return (
     <div style={{ height: 700, width: '100%' }}>
       <DataGrid
-        rows={tableData}
+        rows={rowData}
         columns={columns}
         pageSize={99}
         checkboxSelection

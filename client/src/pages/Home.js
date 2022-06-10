@@ -10,14 +10,16 @@ import "boxicons/css/boxicons.min.css";
 
 const Home = () => {
   return (
+    <div>
+      {/* <AppLayout /> */}
     <div className="container">
-      <AppLayout />
       <div>
       </div>
       <p>AIO test</p>
       {/* <CategoryMenu /> */}
       {/* <ProductList /> */}
       {/* <Cart /> */}
+    </div>
     </div>
   );
 };

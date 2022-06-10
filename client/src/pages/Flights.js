@@ -15,7 +15,7 @@ import ExampleDataTable from '../components/ExampleDataTable';
 const Fligths = () => {
   return (
     <div className="container">
-      <AppLayout />
+      {/* <AppLayout /> */}
       <div>
       {/* <DataTable /> */}
       <DataTableAxios />

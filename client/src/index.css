@@ -80,7 +80,7 @@ a:hover {
 }
 
 header {
-  background: var(--primary);
+  background-color: #308efe;
 }
 
 header a {
@@ -157,6 +157,7 @@ input:focus {
 .mx-1 {
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
+  height:50px;
 }
 
 .mx-2 {
@@ -203,6 +204,22 @@ input:focus {
   color: var(--error);
 }
 
+.logoFont {
+  font-family: 'Mochiy Pop P one', sans-serif;
+  font-size: large;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* text-align: right;
+  justify-content: right;
+  align-items: right;
+  float: right; */
+}
+
+.floatRight {
+  align-items: right;
+  justify-content: right;
+  float:right;
+}
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
