@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './sidebar.scss';
+import logo from './logo2.png';
 
 const sidebarNavItems = [
     {
@@ -79,6 +80,7 @@ const Sidebar = () => {
 
     return <div className='sidebar'>
         <div className="sidebar__logo">
+        <img src={logo} alt="Logo" height="96px" width="96px"></img>
             AIO Travel Scoop
         </div>
         <div ref={sidebarRef} className="sidebar__menu">

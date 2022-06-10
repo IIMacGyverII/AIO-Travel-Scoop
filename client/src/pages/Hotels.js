@@ -14,7 +14,7 @@ import DataTableHotel from '../components/DataTableHotel';
 const Home = () => {
   return (
     <div className="container">
-      <AppLayout />
+      {/* <AppLayout /> */}
       <div>
       </div>
       <p>hotels test</p>

@@ -11,7 +11,7 @@ import "boxicons/css/boxicons.min.css";
 const Home = () => {
   return (
     <div className="container">
-      <AppLayout />
+      {/* <AppLayout /> */}
       <div>
       </div>
       <p>Things to Do test</p>
