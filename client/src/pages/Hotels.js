@@ -8,6 +8,9 @@ import AppLayout from "../components/layout/AppLayout";
 import "../App.scss";
 import "boxicons/css/boxicons.min.css";
 
+// datatable
+import DataTableHotel from '../components/DataTableHotel';
+
 const Home = () => {
   return (
     <div className="container">
@@ -15,6 +18,7 @@ const Home = () => {
       <div>
       </div>
       <p>hotels test</p>
+      <DataTableHotel />
       {/* <CategoryMenu /> */}
       {/* <ProductList /> */}
       {/* <Cart /> */}
