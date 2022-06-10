@@ -49,10 +49,10 @@ function Nav() {
     <header className="flex-row px-1">
       <AppLayout />
       <h1>
-        <Link to="/">
+        {/* <Link to="/">
           <span role="img" aria-label="shopping bag">🛍️</span>
           -Shop-Shop
-        </Link>
+        </Link> */}
       </h1>
 
       <nav>

@@ -9,13 +9,17 @@ import "../App.scss";
 import "boxicons/css/boxicons.min.css";
 // datatable
 import DataTable from '../components/DataTable';
+import DataTableAxios from '../components/DataTableAxios';
+import ExampleDataTable from '../components/ExampleDataTable';
 
 const Fligths = () => {
   return (
     <div className="container">
       <AppLayout />
       <div>
-      <DataTable />
+      {/* <DataTable /> */}
+      <DataTableAxios />
+      {/* <ExampleDataTable /> */}
       </div>
       <p>Flights test</p>
       {/* <CategoryMenu /> */}
