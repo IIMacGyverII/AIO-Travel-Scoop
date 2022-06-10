@@ -3,8 +3,15 @@ import { DataGrid } from '@material-ui/data-grid'
 
 const columns = [
   { field: 'id', headerName: 'ID' },
-  { field: 'title', headerName: 'Title', width: 300 },
-  { field: 'body', headerName: 'Body', width: 600 }
+  { field: 'airline', headerName: 'airport', width: 300 },
+  { field: 'airport', headerName: 'airline', width: 600 },
+  {
+    field: 'airline',
+    headerName: 'Airline',
+    valueGetter: (params) => {
+      return params.getValue(params.id, "attributes").name;
+    }
+  },
 ]
 
 const DataTable = () => {
@@ -13,6 +20,7 @@ const DataTable = () => {
 
   const [rows, setRows] = useState(tableData);
   const [deletedRows, setDeletedRows] = useState([]);
+  const [airlineData, setAirlineData] = useState([])
 
   useEffect(() => {
     const options = {
@@ -24,19 +32,25 @@ const DataTable = () => {
     };
     fetch('https://priceline-com-provider.p.rapidapi.com/v1/flights/search?itinerary_type=ROUND_TRIP&class_type=FST&location_arrival=MSP&date_departure=2022-11-15&location_departure=JFK&sort_order=PRICE&number_of_stops=1&price_max=20000&number_of_passengers=1&duration_max=2051&price_min=100&date_departure_return=2022-11-16', options)
       .then((data) => data.json())
-      .then(data => console.log(data))
-    //   .then((data) => setTableData(data))
-
+      .then(data => {
+        console.log("bulkfetch", data)
+        console.log("dataTablefetch", data.airline)
+      setAirlineData(data.airline)
+      })
+      
+      
+      
+      
   }, [])
-
-  console.log(tableData);
-
+console.log("andrew", airlineData)
+  console.log("dataTablefetch tabledata", tableData);
+// console.log(flight)
   return (
     <div style={{ height: 700, width: '100%' }}>
       <DataGrid
         rows={tableData}
         columns={columns}
-        pageSize={12}
+        pageSize={99}
         checkboxSelection
         onSelectionModelChange={({ selectionModel }) => {
           const rowIds = selectionModel.map(rowId => parseInt(String(rowId), 10));
