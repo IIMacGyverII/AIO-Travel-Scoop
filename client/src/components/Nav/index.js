@@ -6,14 +6,18 @@ import AppLayout from "../layout/AppLayout";
 import "../../App.scss";
 import "boxicons/css/boxicons.min.css";
 
+import OriginSearchForm from "../SearchBar/OriginSearchForm";
+import DestinationSearchForm from "../SearchBar/DestinationSearchForm";
+
+
 function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
         <div>
           {/* <AppLayout /> */}
-          <ul className="flex-row">
-            <li className="mx-1 floatRight">
+          <ul className="flex-row logoFont">
+            <li className="mx-1">
               {/* <Link to="/orderHistory">Order History</Link> */}
             </li>
             <li className="mx-1">
@@ -29,7 +33,7 @@ function Nav() {
       return (
         <div>
         {/* <AppLayout /> */}
-        <ul className="flex-row">
+        <ul className="flex-row logoFont">
           <li className="mx-1">
             <Link to="/signup" className="logoFont">Signup</Link>
           </li>
@@ -41,7 +45,7 @@ function Nav() {
       );
     }
   }
-
+  
   return (
     <div>
     <header className="flex-row px-1">
@@ -53,7 +57,12 @@ function Nav() {
         </Link> */}
       </h1>
 
-      <nav>{showNavigation()}</nav>
+      <nav style={{
+        marginTop: "10px"
+      }}>{showNavigation()}</nav>
+        <OriginSearchForm />
+        <DestinationSearchForm />
+        
     </header>
     </div>
   );

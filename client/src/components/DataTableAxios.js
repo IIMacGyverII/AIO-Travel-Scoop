@@ -1,18 +1,47 @@
+
 import React, { useState, useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import axios from "axios";
+import TableContainer from '@mui/material/TableContainer';
+import Paper from '@mui/material/Paper';
+import {
+  Avatar,
+  Box,
+  Card,
+  Checkbox,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TablePagination,
+  TableRow,
+  Typography,
+} from "@mui/material";
 
-const columns = [
-  { field: 'name', headerName: 'Airline Name', width: 300 },
-  { field: 'airport', headerName: 'airline', width: 600 },
-  // { field: "response.data.airline[0].name", headerName: "airline", width: 600 },
+function createData(
+  name: string,
+  calories: number,
+  fat: number,
+  carbs: number,
+  protein: number,
+) {
+  return { name, calories, fat, carbs, protein };
+}
+
+const rows = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
 const DataTableAxios = () => {
   const [tableData, setTableData] = useState([]);
 
   const [airlineData, setAirlineData] = useState([]);
-  const [segmentData, setSegmentData] = useState(tableData);
+  const [segmentData, setSegmentData] = useState([]);
+  const [pricedItineraryData, setPricedItineraryData] = useState([]);
   const [deletedRows, setDeletedRows] = useState([]);
   // const [airlineData, setAirlineData] = useState([])
 
@@ -22,12 +51,12 @@ const DataTableAxios = () => {
       url: "https://priceline-com-provider.p.rapidapi.com/v1/flights/search",
       params: {
         itinerary_type: "ONE_WAY",
-        class_type: "FST",
+        class_type: "ECO",
         location_arrival: "MSP",
         date_departure: "2022-11-15",
         location_departure: "JFK",
         sort_order: "PRICE",
-        number_of_stops: "1",
+        number_of_stops: "0",
         price_max: "20000",
         number_of_passengers: "1",
         duration_max: "2051",
@@ -55,6 +84,8 @@ const DataTableAxios = () => {
         setTableData(response.data);
         setAirlineData(response.data.airline)
         setSegmentData(response.data.segment)
+        setPricedItineraryData(response.data.pricedItinerary)
+        console.log("segment", response.data.segment)
       })
       .catch(function (error) {
         console.error(error);
@@ -64,40 +95,124 @@ const DataTableAxios = () => {
   console.log("andrewaxios", airlineData)
   
   const rowData1 = airlineData?.map((airline) => {
-    console.log("console", airline)
+    // console.log("airlineData", airline)
     return {
-      id: airline?.code,
-      name: airline?.name,
-      // email: airline?.email,
-      // phone: airline?.phone,
-      // id: airline?.id,
-      // website: airline?.website,
-      // phone: airline?.phone,
-      // company: airline?.company?.name,
-      // city: airline?.address?.city,
+      airlineName: airline?.name,      
     };
   });
 
+  
+  const rowData2 = segmentData?.map((segmented) => {
+    // console.log("segmented", segmented)
+    return {
+      segmentedArrival: segmented?.arrivalDateTime,  
+      segmentedDeparture: segmented?.departDateTime,  
+      segmentedFlightNumber: segmented?.flightNumber, 
+      segmentedmarketingAirline: segmented?.marketingAirline,   
+    };
+  });
+
+  const rowData3 = pricedItineraryData?.map((pricedItinerary) => {
+    // console.log("pricedItinerary", pricedItinerary)
+    return {
+      totalFare: pricedItinerary?.pricingInfo.totalFare,     
+    };
+  });
+
+
+// console.log("airlineData", rowData1);
   return (
-    <div style={{ height: 700, width: "100%" }}>
-      <DataGrid
-        rows={rowData1}
-        columns={columns}
-        pageSize={99}
-        pagination
-        checkboxSelection
-        onSelectionModelChange={({ selectionModel }) => {
-          const rowIds = selectionModel.map((rowId) =>
-            parseInt(String(rowId), 10)
-          );
-          const rowsToDelete = tableData.filter((row) =>
-            rowIds.includes(row.id)
-          );
-          setDeletedRows(rowsToDelete);
-          console.log(deletedRows);
-        }}
-      />
-    </div>
+    <div className="container flex">
+    {/* <TableContainer component={Paper} style={{ width: 300 }}>
+    <Table sx={{ minWidth: 300 }} size="small" aria-label="a dense table">
+      <TableHead>
+        <TableRow>
+          <TableCell>Airline</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {rowData1.map((row) => (
+          <TableRow
+            key={row.name}
+            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+          >
+            <TableCell component="th" scope="row">
+              {row.airlineName}
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+      
+    </Table>
+  </TableContainer> */}
+  <TableContainer component={Paper} style={{ width: 600 }}>
+    <Table sx={{ maxWidth: 600 }} size="small" aria-label="a dense table">
+      <TableHead>
+        <TableRow>
+        <TableCell>Airline</TableCell>
+          <TableCell>Arival</TableCell>
+          <TableCell>Departure</TableCell>
+          <TableCell>Flight Number</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {rowData2.map((row) => (
+          <TableRow
+            key={row.name}
+            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+          >
+            <TableCell component="th" scope="row">
+              {row.segmentedmarketingAirline}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.segmentedArrival}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.segmentedDeparture}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.segmentedFlightNumber}
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+      
+      
+    </Table>
+  </TableContainer>
+  <TableContainer component={Paper} style={{ width: 100 }}>
+    <Table sx={{ maxWidth: 100 }} size="small" aria-label="a dense table">
+      <TableHead>
+        <TableRow>
+          <TableCell>Price</TableCell>
+          {/* <TableCell>Departure</TableCell>
+          <TableCell>Flight Number</TableCell> */}
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        {rowData3.map((row) => (
+          <TableRow
+            key={row.name}
+            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+          >
+            <TableCell  component="th" scope="row">
+              ${row.totalFare}
+            </TableCell>
+            {/* <TableCell component="th" scope="row">
+              {row.segmentedDeparture}
+            </TableCell>
+            <TableCell component="th" scope="row">
+              {row.segmentedFlightNumber}
+            </TableCell> */}
+          </TableRow>
+        ))}
+      </TableBody>
+      
+      
+    </Table>
+  </TableContainer>
+  </div>
+  
   );
 };
 

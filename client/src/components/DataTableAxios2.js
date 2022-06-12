@@ -1,0 +1,107 @@
+import React, { useState, useEffect } from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import axios from "axios";
+
+const columns = [
+  { field: 'name', headerName: 'Airline Name', width: 300 },
+  { field: 'airport', headerName: 'airline', width: 600 },
+  // { field: "response.data.airline[0].name", headerName: "airline", width: 600 },
+];
+
+const DataTableAxios = () => {
+  const [tableData, setTableData] = useState([]);
+
+  const [airlineData, setAirlineData] = useState([]);
+  const [segmentData, setSegmentData] = useState([]);
+  const [deletedRows, setDeletedRows] = useState([]);
+  // const [airlineData, setAirlineData] = useState([])
+
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      url: "https://priceline-com-provider.p.rapidapi.com/v1/flights/search",
+      params: {
+        itinerary_type: "ONE_WAY",
+        class_type: "FST",
+        location_arrival: "MSP",
+        date_departure: "2022-11-15",
+        location_departure: "JFK",
+        sort_order: "PRICE",
+        number_of_stops: "0",
+        price_max: "20000",
+        number_of_passengers: "1",
+        duration_max: "2051",
+        price_min: "100",
+        date_departure_return: "2022-11-16",
+      },
+      headers: {
+        "X-RapidAPI-Key": "93a1ef52a6mshd5c29301cc4b0c5p1661bfjsn291d78c08c50",
+        "X-RapidAPI-Host": "priceline-com-provider.p.rapidapi.com",
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log("tableDataAxios response.data", response.data);
+        console.log("tableDataAxios axios", [response.data.airline[0].name]);
+        console.log("tableDataAxios airline array", [response.data.airline])
+        // can use this to get the info if we have to but need a way to get it out of here
+        // ask how to get it out
+        let airline1 = [response.data.airline];
+        console.log("tableDataAxios airline1 axios", airline1);
+        //
+        // console.log("tableDataAxios attempted array", [response.data]);
+        setTableData(response.data);
+        setAirlineData(response.data.airline)
+        // setSegmentData(response.data.segment)
+        console.log("segment", response.data.segment)
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
+  console.log("tableDataAxios", tableData);
+  console.log("andrewaxios", airlineData)
+  
+  const rowData1 = airlineData?.map((airline) => {
+    console.log("console", airline)
+    return {
+      id: airline?.code,
+      name: airline?.name,
+      // email: airline?.email,
+      // phone: airline?.phone,
+      // id: airline?.id,
+      // website: airline?.website,
+      // phone: airline?.phone,
+      // company: airline?.company?.name,
+      // city: airline?.address?.city,
+    };
+  });
+
+  return (
+    <div style={{ height: 700, width: "100%" }}>
+      <DataGrid
+        rows={rowData1}
+        columns={columns}
+        pageSize={99}
+        pagination
+        checkboxSelection
+        onSelectionModelChange={({ selectionModel }) => {
+          const rowIds = selectionModel.map((rowId) =>
+            parseInt(String(rowId), 10)
+          );
+          const rowsToDelete = tableData.filter((row) =>
+            rowIds.includes(row.id)
+          );
+          setDeletedRows(rowsToDelete);
+          console.log(deletedRows);
+        }}
+      />
+    </div>
+  );
+};
+
+export default DataTableAxios;
+
+
