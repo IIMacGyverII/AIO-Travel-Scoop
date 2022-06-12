@@ -12,6 +12,7 @@ import AppLayout from "./components/layout/AppLayout";
 import "./App.scss";
 import "boxicons/css/boxicons.min.css";
 
+
 // material UI
 import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
 import ThreeDRotation from "@mui/icons-material/ThreeDRotation";
@@ -32,6 +33,8 @@ import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
+
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -56,7 +59,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div
+          
+        >
           <Nav />
           {/* <StoreProvider> */}
           <div>
@@ -81,6 +86,7 @@ function App() {
           </Routes>
           {/* </StoreProvider> */}
         </div>
+            
       </Router>
     </ApolloProvider>
   );

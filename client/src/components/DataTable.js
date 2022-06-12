@@ -34,7 +34,7 @@ const DataTable = () => {
       .then((data) => data.json())
       .then(data => {
         console.log("bulkfetch", data)
-        console.log("dataTablefetch", data.airline)
+        console.log("dataTablefetch", data.airline.name)
       setAirlineData(data.airline)
       })   
       
@@ -54,7 +54,7 @@ const DataTable = () => {
       // city: airline?.address?.city,
     };
   });
-
+console.log("airlinedata", airlineData)
 console.log("andrew", airlineData)
   console.log("dataTablefetch tabledata", tableData);
 // console.log(flight)

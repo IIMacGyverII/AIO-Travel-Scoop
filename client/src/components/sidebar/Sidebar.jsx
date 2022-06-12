@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './sidebar.scss';
 import logo from './logo2.png';
+// searchbar
+import SearchBar from "../SearchBar/OriginSearchForm";
 
 const sidebarNavItems = [
     {
@@ -90,7 +92,7 @@ const Sidebar = () => {
                 style={{
                     transform: `translateX(-50%) translateY(${activeIndex * stepHeight}px)`
                 }}
-            ></div>
+                ></div>
             {
                 sidebarNavItems.map((item, index) => (
                     <Link to={item.to} key={index}>
@@ -106,6 +108,7 @@ const Sidebar = () => {
                 ))
             }
         </div>
+            {/* <SearchBar/> */}
     </div>;
 };
 
