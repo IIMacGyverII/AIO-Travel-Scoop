@@ -4,7 +4,7 @@ import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import background from "../pages/images/flight.png";
+import background from "../pages/images/airplane.jpg";
 // sidebar
 import AppLayout from "../components/layout/AppLayout";
 import "../App.scss";
@@ -23,9 +23,10 @@ const Fligths = () => {
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        height: "90vh",
+        height: "100vh",
         width: "1000vw",
         left: "0",
+        backgroundPosition: "bottom"  
         // width: "150%"
         // marginLeft: "10%"
       }}>
