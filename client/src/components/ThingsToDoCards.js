@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 // end card JS
 
 const ThingsToDoCards = () => {
-  const [tableData, setTableData] = useState([]);
+  const [tableData, setTableData] = useState(false);
   const classes = useStyles();
   const [thingsToDoData, setThingsToDoData] = useState([]);
 //   const [segmentData, setSegmentData] = useState([]);
@@ -69,16 +69,16 @@ axios.request(options).then(function (response) {
 //   console.log("tableDataCards", tableData);
   
 
-  const thingsData = tableData.data?.map((things) => {
-    console.log("things", things)
-    return {
-      name: things?.name,
+//   const thingsData = tableData.data?.map((things) => {
+    // console.log("things", things)
+    // return {
+    //   name: things?.name,
     //   description: things?.attractionDescription,
     //   address: things?.attractionAddress,
     //   ranking_position: things?.attractionRankingPosition,
     //   hours: things?.attractionHours,
-    };
-  });
+    // };
+//   });
 
 //   const rowData3 = attractionItineraryData?.map((attractionItinerary) => {
     // console.log("pricedItinerary", pricedItinerary.pricingInfo.totalFare)
@@ -105,20 +105,42 @@ axios.request(options).then(function (response) {
 //       </form>
 //     )
 //   }
-  
+if(tableData === false) {
+    console.log("undefined")
+    return  (
+    <div>
+    <>Still loading...</>;
+    </div>
+    );
+  } else {
+   
+
   return tableData.data.map((things) => (
     <Card
       style={{
         marginRight: "1.5%",
         marginBottom: "1.5%",
         boxShadow: "0px 0px 10px 2px black",
+        maxWidth: "45%",
       }}
     >
       <CardActionArea>
         <CardContent>
+        {/* <div>
+              <img
+                src={
+                    
+                  things.photo.images.small.url
+                }
+                alt="Image Not Available"
+                width="150"
+                height="100"
+              />
+            </div> */}
+
           <Typography
             gutterBottom
-            variant="h5"
+            variant="h4"
             component="b"
             key={things.name}
           >
@@ -131,15 +153,16 @@ axios.request(options).then(function (response) {
             Attraction Address: {things.address}
           </Typography>
           <Typography variant="p"  component="p">
-            Attraction Ranking Position: {things.ranking_position} Minutes
+            Attraction Ranking Position: {things.ranking_position}
           </Typography>
-          <Typography variant="p"  component="p">
-            Attraction Hours: {things.hours}
-          </Typography>
+          {/* <Typography variant="p"  component="p">
+            Attraction Hours: {things.hours.week_ranges.close_time}
+          </Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>
   ));
 };
+}
 
 export default ThingsToDoCards;
