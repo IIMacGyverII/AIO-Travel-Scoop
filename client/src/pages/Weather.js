@@ -4,20 +4,35 @@ import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // sidebar
-import AppLayout from "../components/layout/AppLayout";
-import "../App.scss";
-import "boxicons/css/boxicons.min.css";
+import background from "../pages/images/hotel.jpg";
+import WeatherCards from "../components/WeatherCards";
 
 const Home = () => {
   return (
-    <div className="container">
-      {/* <AppLayout /> */}
-      <div>
+    <div>
+      <div className="container"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        height: "90vh",
+        width: "100vw",
+        left: "0",
+        // width: "150%"
+        // marginLeft: "10%"
+      }}>
+        {/* <AppLayout /> */}
+        {/* <p>Flights test</p> */}
+        <div className="flex flightCard">
+        <PlacesToEatCards />
+          {/* <DataTable /> */}
+          {/* <DataTableAxios /> */}
+          {/* <ExampleDataTable /> */}
+        </div>
+        {/* <CategoryMenu /> */}
+        {/* <ProductList /> */}
+        {/* <Cart /> */}
       </div>
-      <p>Weather test</p>
-      {/* <CategoryMenu /> */}
-      {/* <ProductList /> */}
-      {/* <Cart /> */}
     </div>
   );
 };
