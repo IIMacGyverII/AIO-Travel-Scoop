@@ -84,7 +84,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/IIMacGyverII/AIO-Travel-Scoop/blob/main/images/ss.webp?raw=true)
 
-All In One Travel Scoop is a traveling made easy application.  Users would be able to book their vacation in one app just like that.  Our app consist searches for: flights, hotels, cars, things to do, restaurant and weather. Users can sign up and create a log in account.  
+AIO Travel Scoop is a traveling made easy application.  Users would be able to book their vacation in one app just like that.  Our app consist searches for: flights, hotels, cars, things to do, restaurant and weather. Users can sign up and create a log in account.  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
