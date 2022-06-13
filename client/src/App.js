@@ -59,7 +59,9 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div
+        <div style={{
+        position: "fixed"
+      }}
           
         >
           <Nav />

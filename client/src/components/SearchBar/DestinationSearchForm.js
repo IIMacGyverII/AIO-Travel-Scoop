@@ -6,20 +6,23 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
-
+console.log(onchange)
 export default function CustomizedInputBase() {
+    // let onchange = ""
   return (
     <Paper
       component="form"
       sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400, height: "60%", marginTop: "15px"}}
     >
-      <IconButton sx={{ p: '10px' }} aria-label="menu">
+      {/* <IconButton sx={{ p: '10px' }} aria-label="menu">
         <MenuIcon />
-      </IconButton>
+      </IconButton> */}
       <InputBase
         sx={{ ml: 1, flex: 1 }}
         placeholder="Where are going?"
         inputProps={{ 'aria-label': 'Where are you?' }}
+        onChange="/flights"
+        
       />
       <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
         <SearchIcon />

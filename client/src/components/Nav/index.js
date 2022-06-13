@@ -9,6 +9,8 @@ import "boxicons/css/boxicons.min.css";
 import OriginSearchForm from "../SearchBar/OriginSearchForm";
 import DestinationSearchForm from "../SearchBar/DestinationSearchForm";
 
+import Test from "../SearchBar/Test";
+
 
 function Nav() {
   function showNavigation() {
@@ -48,7 +50,7 @@ function Nav() {
   
   return (
     <div>
-    <header className="flex-row px-1">
+    <header className="flex-row px-1 fixed">
       {/* <AppLayout /> */}
       <h1>
         {/* <Link to="/">
@@ -60,7 +62,8 @@ function Nav() {
       <nav style={{
         marginTop: "10px"
       }}>{showNavigation()}</nav>
-        <OriginSearchForm />
+        {/* <OriginSearchForm /> */}
+        {/* <Test /> */}
         <DestinationSearchForm />
         
     </header>
