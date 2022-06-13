@@ -1,5 +1,5 @@
 {
-  "name": "mern-shopping",
+  "name": "AIO Travel Scoop",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -11,7 +11,7 @@
     "build": "cd client && npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Joshua Christianson and Reycel Huffman",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"

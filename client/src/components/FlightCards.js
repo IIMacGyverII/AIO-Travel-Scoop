@@ -7,6 +7,12 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { responsiveFontSizes } from "@mui/material";
 import { mergeBreakpointsInOrder } from "@mui/system";
+import Loading from "react-loading-components";
+
+
+const loadingWheel = () => (
+  <Loading type="ball_triangle" width={800} height={800} fill="#f44242" />
+);
 
 // card JS
 const useStyles = makeStyles({
@@ -25,12 +31,12 @@ const useStyles = makeStyles({
 // end card JS
 
 const FlightCards = () => {
-  const [tableData, setTableData] = useState([]);
+  const [tableData, setTableData] = useState(false);
   const classes = useStyles();
-  const [airlineData, setAirlineData] = useState([]);
+  // const [airlineData, setAirlineData] = useState([]);
   const [segmentData, setSegmentData] = useState([]);
   const [pricedItineraryData, setPricedItineraryData] = useState([]);
-  const [deletedRows, setDeletedRows] = useState([]);
+  // const [deletedRows, setDeletedRows] = useState([]);
   // const [airlineData, setAirlineData] = useState([])
 
   useEffect(() => {
@@ -70,7 +76,7 @@ const FlightCards = () => {
         //
         // console.log("tableDataAxios attempted array", [response.data]);
         setTableData(response.data);
-        setAirlineData(response.data.airline);
+        // setAirlineData(response.data.airline);
         setSegmentData(response.data.segment);
         setPricedItineraryData(response.data.pricedItinerary);
         // console.log("airline1", response.data.airline[0].name)
@@ -79,7 +85,7 @@ const FlightCards = () => {
         console.error(error);
       });
   }, []);
-  console.log("tableDataCards", tableData);
+  // console.log("tableDataCards", tableData);
   // console.log("andrewaxios", airlineData)
 
   // let rowData1 = airlineData?.map((airline) => {
@@ -114,15 +120,26 @@ const FlightCards = () => {
   // console.log("totalfaretest", merged.totalFare);
   // console.log("merged", merged);
   // console.log("rowData1", rowData1[0]);
+  console.log(tableData)
+  if (tableData === false) {
+    console.log("tableDataundefined");
+    return (
+      <div>
+        {loadingWheel()}
+        <>Still loading...</>;
+      </div>
+    );
+  } else {
   return rowData2.map((segment) => (
     <Card
       style={{
         marginRight: "1.5%",
         marginBottom: "1.5%",
         boxShadow: "0px 0px 10px 2px black",
+        marginTop: "2%",
       }}
     >
-      <CardActionArea>
+      <CardActionArea href="https://www.delta.com">
         <CardContent>
           <Typography
             gutterBottom
@@ -158,5 +175,5 @@ const FlightCards = () => {
     </Card>
   ));
 };
-
+}
 export default FlightCards;

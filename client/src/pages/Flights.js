@@ -4,7 +4,7 @@ import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import background from "../pages/images/flight.png";
+import background from "../pages/images/airport.webp";
 // sidebar
 import AppLayout from "../components/layout/AppLayout";
 import "../App.scss";
@@ -26,6 +26,7 @@ const Fligths = () => {
         height: "90vh",
         width: "1000vw",
         left: "0",
+        
         // width: "150%"
         // marginLeft: "10%"
       }}>
