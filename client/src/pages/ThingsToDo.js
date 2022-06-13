@@ -3,23 +3,39 @@ import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// sidebar
-import AppLayout from "../components/layout/AppLayout";
-import "../App.scss";
-import "boxicons/css/boxicons.min.css";
+import background from "../pages/images/flight.png";
 
-const Home = () => {
+import ThingsToDoCards from "../components/ThingsToDoCards";
+
+const ThingsToDo = () => {
   return (
-    <div className="container">
-      {/* <AppLayout /> */}
-      <div>
+    <div >
+      <div className="container"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        height: "90vh",
+        width: "1000vw",
+        left: "0",
+        // backgroundPosition: "bottom"  
+        // width: "150%"
+        // marginLeft: "10%"
+      }}>
+        {/* <AppLayout /> */}
+        {/* <p>ThingsToDoCardss test</p> */}
+        <div className="flex flightCard">
+        <ThingsToDoCards />
+          {/* <DataTable /> */}
+          {/* <DataTableAxios /> */}
+          {/* <ExampleDataTable /> */}
+        </div>
+        {/* <CategoryMenu /> */}
+        {/* <ProductList /> */}
+        {/* <Cart /> */}
       </div>
-      <p>Things to Do test</p>
-      {/* <CategoryMenu /> */}
-      {/* <ProductList /> */}
-      {/* <Cart /> */}
     </div>
   );
 };
 
-export default Home;
+export default ThingsToDo;
