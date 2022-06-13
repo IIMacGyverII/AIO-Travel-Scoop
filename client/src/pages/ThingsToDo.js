@@ -3,7 +3,7 @@ import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import background from "../pages/images/flight.png";
+import background from "../pages/images/cherry.jpg";
 
 import ThingsToDoCards from "../components/ThingsToDoCards";
 
