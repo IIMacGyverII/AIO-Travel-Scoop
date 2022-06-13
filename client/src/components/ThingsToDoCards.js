@@ -131,7 +131,7 @@ if(tableData === false) {
         maxWidth: "45%",
       }}
     >
-      <CardActionArea>
+      <CardActionArea href="https://www.minneapolisparks.org/parks-destinations/parks-lakes/minnehaha_regional_park/">
         <CardContent>
         {/* <div>
               <img

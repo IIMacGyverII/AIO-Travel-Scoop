@@ -81,7 +81,7 @@ const PlacesToEatCards = () => {
           marginTop: "1%"
         }}
       >
-        <CardActionArea>
+        <CardActionArea href="https://holylandbrand.com/">
           <CardContent>
             {/* <div>
               <img
