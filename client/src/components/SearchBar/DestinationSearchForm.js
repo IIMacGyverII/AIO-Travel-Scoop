@@ -8,7 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import DirectionsIcon from '@mui/icons-material/Directions';
 console.log(onchange)
 export default function CustomizedInputBase() {
-    // let onchange = ""
+    let onchange = ""
   return (
     <Paper
       component="form"
@@ -21,7 +21,7 @@ export default function CustomizedInputBase() {
         sx={{ ml: 1, flex: 1 }}
         placeholder="Where are going?"
         inputProps={{ 'aria-label': 'Where are you?' }}
-        onChange="/flights"
+        onChange={onchange}
         
       />
       <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
