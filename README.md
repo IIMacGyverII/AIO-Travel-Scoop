@@ -148,11 +148,6 @@ _Below is an example of how you can instruct your audience on installing and set
 Video demo: Click on the link below
 https://youtu.be/S1sps6vOrFA
 
-_For more examples, please refer to the [](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
