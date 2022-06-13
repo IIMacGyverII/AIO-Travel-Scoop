@@ -4,7 +4,7 @@ import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // sidebar
-import background from "../pages/images/hotel.jpg";
+import background from "../pages/images/restaurant.jpg";
 import PlacesToEatCards from "../components/PlacesToEatCards";
 
 const Home = () => {

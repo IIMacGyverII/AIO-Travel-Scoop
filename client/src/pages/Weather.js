@@ -4,7 +4,7 @@ import CategoryMenu from "../components/CategoryMenu";
 import Cart from "../components/Cart";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // sidebar
-import background from "../pages/images/hotel.jpg";
+import background from "../pages/images/weather.webp";
 import WeatherCards from "../components/WeatherCards";
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
         {/* <AppLayout /> */}
         {/* <p>Flights test</p> */}
         <div className="flex flightCard">
-        <PlacesToEatCards />
+        <WeatherCards />
           {/* <DataTable /> */}
           {/* <DataTableAxios /> */}
           {/* <ExampleDataTable /> */}

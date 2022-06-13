@@ -60,8 +60,8 @@ if (tableData === false) {
     );
 } else {
 
-
-    return tableData.data.map((weather) => (
+return (
+    // return tableData.map((weather) => (
         <Card
             style={{
                 marginRight: "1.5%",
@@ -88,27 +88,27 @@ if (tableData === false) {
                         gutterBottom
                         variant="h4"
                         component="b"
-                        key={weather.name}
+                        // key={weather.name}
                     >
-                        Location Name: {weather.name}
+                        Location Name: {tableData.location.name}
                     </Typography>
                     <Typography variant="p" component="p">
-                        Location Temperature: {weather.temp_f}
+                        Location Temperature: {tableData.current.temp_f}
                     </Typography>
                     <Typography variant="p" component="p">
-                        Location Wind Speed: {weather.wind_mph}
+                        Location Wind Speed: {tableData.current.wind_mph}
                     </Typography>
                     <Typography variant="p" component="p">
-                        Location Humidity: {weather.humidity}
+                        Location Humidity: {tableData.current.humidity}
                     </Typography>
                     <Typography variant="p" component="p">
-                        Location Hours: {weather.feelslike_f}
+                        Location Hours: {tableData.current.feelslike_f}
                     </Typography>
                 </CardContent>
             </CardActionArea>
         </Card>
-    ));
+)};
         };
-    }
+
 
 export default WeatherCards;
