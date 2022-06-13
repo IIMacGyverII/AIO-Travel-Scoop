@@ -84,16 +84,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/IIMacGyverII/AIO-Travel-Scoop/blob/main/images/ss.webp?raw=true)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+All In One Travel Scoop is a traveling made easy application.  Users would be able to book their vacation in one app just like that.  Our app consist searches for: flights, hotels, cars, things to do, restaurant and weather. Users can sign up and create a log in account.  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -121,16 +112,13 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+If you want to try it out check out our heroku links below. 
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+This is an example of how to list things you need to use the software.
+VS Code 
+  
 
 ### Installation
 
@@ -139,15 +127,15 @@ _Below is an example of how you can instruct your audience on installing and set
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/IIMacGyverII/AIO-Travel-Scoop
    ```
 3. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Run it on browser`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   npm run develop;
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -212,9 +200,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@your_github](https://github.com/IIMacGyverII)) 
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [(https://github.com/IIMacGyverII/AIO-Travel-Scoop)]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
