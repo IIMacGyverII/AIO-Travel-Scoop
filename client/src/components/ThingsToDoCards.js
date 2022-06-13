@@ -34,7 +34,7 @@ const ThingsToDoCards = () => {
   // const [airlineData, setAirlineData] = useState([])
 
   useEffect(() => {
-    const axios = require("axios");
+    // const axios = require("axios");
 
 const options = {
   method: 'GET',

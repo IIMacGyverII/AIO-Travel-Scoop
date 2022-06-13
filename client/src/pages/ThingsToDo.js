@@ -23,7 +23,7 @@ const ThingsToDo = () => {
         // marginLeft: "10%"
       }}>
         {/* <AppLayout /> */}
-        {/* <p>ThingsToDoCardss test</p> */}
+        {/* <p>ThingsToDoCards test</p> */}
         <div className="flex flightCard">
         <ThingsToDoCards />
           {/* <DataTable /> */}
