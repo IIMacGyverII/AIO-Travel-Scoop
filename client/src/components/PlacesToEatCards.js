@@ -27,7 +27,7 @@ const PlacesToEatCards = () => {
   const classes = useStyles();
   const [placesToEatData, setPlacesToEatData] = useState([]);
 
-//   const [attractionItineraryData, setAttractionItineraryData] = useState([]);
+  const [restaurantData, setrestaurantData] = useState([]);
 
 
   const options = {
