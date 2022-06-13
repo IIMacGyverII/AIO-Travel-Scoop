@@ -116,8 +116,9 @@ If you want to try it out check out our heroku links below.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software.
 VS Code 
+GitHub
+Heroku 
   
 
 ### Installation
