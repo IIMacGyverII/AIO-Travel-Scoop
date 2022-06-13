@@ -82,7 +82,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/IIMacGyverII/AIO-Travel-Scoop/blob/main/images/ss.webp?raw=true)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
@@ -252,4 +252,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/IIMacGyverII/AIO-Travel-Scoop/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/joshua-christianson-843b45a/
-[product-screenshot]: images/ss.png
+[product-screenshot]: images/ss.webp
